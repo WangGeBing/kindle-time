@@ -22,13 +22,14 @@
       width: 100%;
       text-align: center;
       overflow: hidden;
+      position: relative; /* 使body可以相对定位 */
     }
 
     .app {
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform-origin: 0 0;
+      transform: translate(-50%, -50%);
     }
 
     .time {
@@ -45,17 +46,37 @@
     .message {
       font-family: TIME;
       margin-top: 1rem;
-      font-size: 2rem; /* 字体大小设置为2rem */
+      font-size: 2.5rem; /* 字体大小设置为2rem */
+    }
+
+    .top-image {
+      position: absolute;
+      top: 0;
+      height: 100px; /* 增加图片高度 */
+      width: auto; /* 自动调整宽度以保持比例 */
+    }
+
+    .top-image.left {
+      left: 0;
+      margin-left: 1rem; /* 图片距离左边的距离 */
+    }
+
+    .top-image.right {
+      right: 0;
+      margin-right: 1rem; /* 图片距离右边的距离 */
     }
   </style>
 </head>
 
 <body>
+  <img src="1.png" alt="Image 1" class="top-image left" />
+  <img src="2.png" alt="Image 2" class="top-image right" />
+
   <div class="app">
     <div class="date"></div>
     <div class="time"></div>
     <div class="cn-date"></div>
-    <div class="message">你好海岐</div>
+    <div class="message">好好学习，天天向上</div>
   </div>
 
   <script src="./calendar.min.js"></script>
